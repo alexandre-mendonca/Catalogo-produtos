@@ -1,0 +1,61 @@
+package br.com.compasso.uol.productsms;
+
+import org.junit.Before;
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mapstruct.Named;
+import org.mockito.InjectMocks;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import br.com.compasso.uol.products.controller.ProdutoController;
+
+
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = ProductsControllerTest.class)
+@AutoConfigureMockMvc
+public class ProductsControllerTest {
+
+	@Autowired
+	private MockMvc mockMvc;
+	
+    @InjectMocks
+    private ProdutoController produtoController;
+	
+    @Before
+    public void setUp() throws Exception {
+        MockitoAnnotations.initMocks(this);
+        mockMvc = MockMvcBuilders.standaloneSetup(produtoController).build();
+    }
+	
+	@Test
+	@Named("Teste do método findById.")
+	public void findById() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/products")
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andReturn();
+
+	}
+
+//	@Test
+//	public void devolvendoBadRequest() throws Exception {
+//
+//		URI uri = new URI("/products");
+//		String json = "{}";
+//
+//		mockMvc.perform(MockMvcRequestBuilders.post(uri).content(json).contentType(MediaType.APPLICATION_JSON))
+//				.andExpect(MockMvcResultMatchers.status().is(400));
+//
+//	}
+
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ProductsControllerTest" project="products-ms" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="br.com.compasso.uol.productsms.ProductsControllerTest" time="0.457" displayname="ProductsControllerTest" uniqueid="[engine:junit-vintage]/[runner:br.com.compasso.uol.productsms.ProductsControllerTest]">
+    <testcase name="findById" classname="br.com.compasso.uol.productsms.ProductsControllerTest" time="0.457" displayname="findById" uniqueid="[engine:junit-vintage]/[runner:br.com.compasso.uol.productsms.ProductsControllerTest]/[test:findById(br.com.compasso.uol.productsms.ProductsControllerTest)]"/>
+  </testsuite>
+</testrun>

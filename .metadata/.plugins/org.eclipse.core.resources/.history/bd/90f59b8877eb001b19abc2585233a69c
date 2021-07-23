@@ -1,0 +1,21 @@
+package br.com.compasso.uol.products.dto;
+
+public class ErroValidationDTO {
+
+	private int code;
+	private String message;
+
+	public ErroValidationDTO(int code, String message) {
+			this.code = code;
+			this.message = message;
+		}
+
+	public int getCampo() {
+		return code;
+	}
+
+	public String getErro() {
+		return message;
+	}
+
+}

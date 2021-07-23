@@ -1,0 +1,67 @@
+package br.com.compasso.uol.productsms;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.web.servlet.MockMvc;
+
+import br.com.compasso.uol.products.ProductsMsApplication;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest(classes = ProductsMsApplication.class)
+@AutoConfigureMockMvc
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class ProductsControllerTest {
+
+	@Autowired
+	private MockMvc mockMvc;
+
+	@Test
+	@DisplayName("Testando o ProdutoController.findById com id existente.")
+	public void findById() throws Exception {
+		mockMvc.perform(get("/products/{id}", 1).accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
+				.andReturn();
+	}
+
+	@Test
+	@DisplayName("Testando o ProdutoController.findById com id inexistente."
+	public void findByIdInexistente() throws Exception {
+		mockMvc.perform(get("/products/{id}", 200).accept(MediaType.APPLICATION_JSON)).andExpect(status().isNotFound())
+				.andReturn();
+	}
+
+	@Test
+	@DisplayName("Testando o ProdutoController.findAll")
+	public void findByAll() throws Exception {
+		mockMvc.perform(get("/products/").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk()).andReturn();
+	}
+
+	@Test
+	@DisplayName("Testando o ProdutoController.delete com id existente.")
+	public void deleteIdExistente() throws Exception {
+		mockMvc.perform(delete("/products/{id}", 1).accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
+				.andReturn();
+	}
+
+	@Test
+	@DisplayName("Testando o ProdutoController.delete com id inexistente.")
+	public void deleteIdInexistente() throws Exception {
+		mockMvc.perform(delete("/products/{id}", 1).accept(MediaType.APPLICATION_JSON)).andExpect(status().isNotFound())
+				.andReturn();
+	}
+
+}

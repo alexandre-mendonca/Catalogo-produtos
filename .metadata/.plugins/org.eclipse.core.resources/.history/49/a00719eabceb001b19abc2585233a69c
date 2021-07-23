@@ -1,0 +1,61 @@
+package br.com.compasso.uol.productsms;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mapstruct.Named;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.util.MultiValueMap;
+
+import br.com.compasso.uol.products.ProductsMsApplication;
+
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest(classes=ProductsMsApplication.class)
+@AutoConfigureMockMvc
+public class ProductsControllerTest {
+
+	@Autowired
+	private MockMvc mockMvc;	
+	
+	@Test
+	@Named("Testando o ProdutoController.findById")
+	public void findById() throws Exception {
+		mockMvc.perform(get("/products/{id}", 1)				
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+
+	}
+	
+	@Test
+	@Named("Testando o ProdutoController.findAll")
+	public void findByAll() throws Exception {
+		mockMvc.perform(get("/products/")				
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+
+	}
+	
+	@Test
+	@Named("Testando o ProdutoController.delete com id existente.")
+	public void delete() throws Exception {
+		mockMvc.perform(delete("/products/{id}", 1)		
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+
+	}
+	
+
+
+}

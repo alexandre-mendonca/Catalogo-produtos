@@ -1,0 +1,5 @@
+package br.com.compasso.uol.products.entity;
+
+public class Produto {
+
+}

@@ -1,0 +1,5 @@
+package br.com.compasso.uol.products.service;
+
+public class ProdutoService {
+
+}

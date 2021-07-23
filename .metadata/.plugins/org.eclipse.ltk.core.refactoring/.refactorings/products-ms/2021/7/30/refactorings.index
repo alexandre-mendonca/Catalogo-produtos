@@ -1,0 +1,11 @@
+1627011141326	Copy compilation unit
+1627011353689	Rename package 'br.com.compasso.uol.productsms'
+1627011364045	Rename package 'br.com.compasso.uol.productsms.controller'
+1627011374812	Rename package 'br.com.compasso.uol.productsms.dto'
+1627011974844	Delete element
+1627012177125	Delete element
+1627016118633	Copy file
+1627016530331	Rename resource 'messages.properties'
+1627017450982	Rename type 'ProdutoHandler'
+1627017532734	Rename type 'ExceptionHandler'
+1627039173506	Rename compilation unit 'ProductsRepositoryTest.java'

@@ -1,0 +1,14 @@
+package br.com.compasso.uol.productsms;
+
+import org.junit.Test;
+
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ProductsMsApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

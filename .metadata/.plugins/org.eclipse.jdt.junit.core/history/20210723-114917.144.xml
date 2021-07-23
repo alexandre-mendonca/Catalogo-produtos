@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ProductsControllerTest" project="products-ms" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="br.com.compasso.uol.productsms.ProductsControllerTest" time="0.938" displayname="ProductsControllerTest" uniqueid="[engine:junit-vintage]/[runner:br.com.compasso.uol.productsms.ProductsControllerTest]">
+    <testcase name="deleteIdExistente" classname="br.com.compasso.uol.productsms.ProductsControllerTest" time="0.713" displayname="deleteIdExistente" uniqueid="[engine:junit-vintage]/[runner:br.com.compasso.uol.productsms.ProductsControllerTest]/[test:deleteIdExistente(br.com.compasso.uol.productsms.ProductsControllerTest)]"/>
+    <testcase name="deleteIdInexistente" classname="br.com.compasso.uol.productsms.ProductsControllerTest" time="0.03" displayname="deleteIdInexistente" uniqueid="[engine:junit-vintage]/[runner:br.com.compasso.uol.productsms.ProductsControllerTest]/[test:deleteIdInexistente(br.com.compasso.uol.productsms.ProductsControllerTest)]"/>
+    <testcase name="findByAll" classname="br.com.compasso.uol.productsms.ProductsControllerTest" time="0.172" displayname="findByAll" uniqueid="[engine:junit-vintage]/[runner:br.com.compasso.uol.productsms.ProductsControllerTest]/[test:findByAll(br.com.compasso.uol.productsms.ProductsControllerTest)]"/>
+    <testcase name="findByIdInexistente" classname="br.com.compasso.uol.productsms.ProductsControllerTest" time="0.013" displayname="findByIdInexistente" uniqueid="[engine:junit-vintage]/[runner:br.com.compasso.uol.productsms.ProductsControllerTest]/[test:findByIdInexistente(br.com.compasso.uol.productsms.ProductsControllerTest)]"/>
+  </testsuite>
+</testrun>

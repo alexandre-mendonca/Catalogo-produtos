@@ -1,0 +1,3 @@
+name.not.blank=Nome não deve estar em branco.
+description.not.blank=Descrição do produto não deve estar em branco.
+price.min.value=O preço do produto não deve ser negativo.
